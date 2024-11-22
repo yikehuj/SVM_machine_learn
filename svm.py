@@ -35,11 +35,8 @@ def preprocess_data(X, y):
 
 # 训练不同参数的SVM模型
 def train_svm_models():
-    kernels = ['线性核函数', '高斯核', '多项式核函数']
+    kernels = ['linear', 'rbf', 'poly']
     C_values = [0.1, 1, 10]
-    # 惩罚系数，用来控制损失函数的惩罚系数，类似于LR中的正则化系数。
-    # C越大，对误分类的惩罚增大，可能导致过拟合；
-    # C值小，容错能力增强，泛化能力较强，但也可能欠拟合。
     models = {}
 
     for kernel in kernels:
